@@ -1,0 +1,129 @@
+preamble:
+  caption:
+    YAML
+  mode:
+    steady
+
+default:
+  before: |
+    beta:
+      - foo  # Foo
+      # Bar
+      - bar
+    # Beta
+
+    # Alpha
+    # delta
+    alpha:  # Foo
+      - foo
+      - bar
+      # Bar
+
+  after:
+    roaming: |
+      # Alpha
+      # delta
+      alpha:  # Foo
+        - foo
+        - bar
+      # Beta
+
+      beta:
+        - foo  # Foo
+        # Bar
+        - bar
+        # Bar
+
+    steady: |
+      alpha:  # Foo
+        - foo
+        - bar
+      # Beta
+
+      # Alpha
+      # delta
+      beta:
+        - foo  # Foo
+        # Bar
+        - bar
+        # Bar
+
+reverse:
+  before: |
+    # Alpha
+    # delta
+    alpha:  # Foo
+      - foo
+      - bar
+      # Bar
+
+    beta:
+      - foo  # Foo
+      # Bar
+      - bar
+    # Beta
+
+  after:
+    roaming: |
+      beta:
+        - foo  # Foo
+        # Bar
+        - bar
+        # Bar
+
+      # Alpha
+      # delta
+      alpha:  # Foo
+        - foo
+        - bar
+      # Beta
+
+    steady: |
+      # Alpha
+      # delta
+      beta:
+        - foo  # Foo
+        # Bar
+        - bar
+        # Bar
+
+      alpha:  # Foo
+        - foo
+        - bar
+      # Beta
+
+case:
+  before: |
+    Beta:
+    alpha:
+    beta:
+    Alpha:
+
+  after: |
+    alpha:
+    Alpha:
+    Beta:
+    beta:
+
+natural:
+  default:
+    before: |
+      alpha10:
+      alpha2:
+
+    after: |
+      alpha2:
+      alpha10:
+
+  case:
+    before: |
+      Alpha2:
+      alpha10:
+      alpha2:
+      Alpha10:
+
+    after: |
+      Alpha2:
+      alpha2:
+      alpha10:
+      Alpha10:

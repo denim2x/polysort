@@ -1,0 +1,36 @@
+{
+  "name": "polysort",
+  "version": "0.1.0-rc.0",
+  "description": "The polyglot sorter for source code",
+  "license": "MIT",
+
+  "author": {
+    "name": "denim2x",
+    "email": "denim2x@cyberdude.com",
+    "url": "http://denim2x.github.io"
+  },
+  "keywords": [
+    "sort",
+    "sorting",
+    "sorter",
+    "source code",
+    "code",
+    "polyglot"
+  ],
+
+  "main": "lib/polysort",
+  "repository": "https://github.com/denim2x/polysort",
+
+  "dependencies": {
+    "assortment": ">=0.1.0-beta",
+    "string-natural-compare": "1.1.*",
+    "yaml-js": "0.1.*"
+  },
+  "devDependencies": {
+    "candace": ">=0.1.0-rc"
+  },
+
+  "scripts": {
+    "test": "candace spec"
+  }
+}
